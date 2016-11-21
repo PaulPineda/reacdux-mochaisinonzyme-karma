@@ -16,10 +16,10 @@ module.exports = {
     ],
     // allows tou to require without the .js at the end of filenames
     // import Component from 'component' vs import Component from 'component.js'
-    extenstions: [ '', '.js', '.json', '.jsx' ]
+    extensions: [ '', '.js', '.json', '.jsx' ]
   },
   output: {
-    path: __dirname + '/dist', // same as path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),//__dirname + '/dist', // same as path: path.resolve(__dirname, 'dist')
     filename: 'bundle.js'
   },
   module:{
@@ -30,7 +30,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: /node_modules/
+        exclude: /(node_modules|bower_components)/
       }
     ]
   }

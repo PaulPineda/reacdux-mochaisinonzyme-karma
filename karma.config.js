@@ -46,15 +46,17 @@ module.exports = function(config){
         ],
         // run babel-loader for our tests
         loaders: [
-          { test: /\.js?$/, exclude: /node_modules/, loader: 'babel' }
+          { test: /\.js?$/, exclude: /node_modules/, loader: 'babel' },
+          { test: /\.json$/, loader: ' json'}
         ]
       },
       //required for enzyme to work
       externals: {
         'jsdom': 'window',
         'cheerio': 'window',
-        'react/lib/ExecutionEnvrinoment': true,
-        'react/lib/ReactContext': 'window'
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': 'window',
+        'react/addons': true
       }
     },
     webpackMiddleware: {

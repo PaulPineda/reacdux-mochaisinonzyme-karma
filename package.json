@@ -4,12 +4,12 @@
   "description": "Boilerplate package for testing with: React Redux Mocha Chai Sinon Enzyme Karma",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base dist",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base dist",
     "build": "webpack",
     "old_test": "mocha --compilers js:babel-register --require ./test/test_helper.js --recursive",
     "old_test:watch": "npm test -- --watch",
     "test": "node_modules/.bin/karma start karma.config.js",
-    "test:dev": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -40,7 +40,8 @@
   },
   "dependencies": {
     "react": "^15.4.0",
-    "react-dom": "^15.4.0"
+    "react-dom": "^15.4.0",
+    "yargs": "^6.4.0"
   },
   "author": "Paul Pineda <paul@pineda.codes> (http://pineda.codes)",
   "license": "ISC"
